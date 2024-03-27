@@ -47,5 +47,25 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
+-- Define a function to save the current buffer
+local function save_buffer()
+  vim.cmd 'wall' -- Save the buffer
+end
 
+-- Map Space + Ctrl + S to save the file
+
+-- Define a keymap for saving the file
+vim.api.nvim_set_keymap('n', '<leader>fs', ':w<CR>', { noremap = true, silent = true })
+local keymap = vim.keymap.set
+-- Better escape using jk in insert and terminal mode
+keymap('i', 'jk', '<ESC>')
+keymap('t', 'jk', '<C-\\><C-n>')
+keymap('t', '<C-h>', '<C-\\><C-n><C-w>h')
+keymap('t', '<C-j>', '<C-\\><C-n><C-w>j')
+keymap('t', '<C-k>', '<C-\\><C-n><C-w>k')
+keymap('t', '<C-l>', '<C-\\><C-n><C-w>l')
+
+-- Better navigation
+keymap('n', ';', ':')
+-- vim: ts=2 sts=2 sw=2 et
 -- vim: ts=2 sts=2 sw=2 et
