@@ -14,8 +14,23 @@
 --  config = function() ... end
 
 return {
+  -- NOTE add on from initial modular neovim config -- Legendary
+  {
+    'mrjones2014/legendary.nvim',
+    keys = {
+      { '<C-S-p>', '<cmd>Legendary<cr>', desc = 'Legendary' },
+      { '<leader>hc', '<cmd>Legendary<cr>', desc = 'Command Palette' },
+    },
+    opts = {
+      which_key = { auto_register = true },
+    },
+  },
   { -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',
+    -- NOTE add in the dependencies
+    dependencies = {
+      'mrjones2014/legendary.nvim',
+    },
     event = 'VimEnter', -- Sets the loading event to 'VimEnter'
     config = function() -- This is the function that runs, AFTER loading
       require('which-key').setup()
@@ -28,6 +43,8 @@ return {
         ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
         ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
         ['<leader>f'] = { name = '[F]ile', _ = 'which_key_ignore' },
+        t = { name = 'test', h = { print 'hello' } },
+        { prefix = '<leader>' },
       }
     end,
   },

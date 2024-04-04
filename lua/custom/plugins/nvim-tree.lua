@@ -3,7 +3,7 @@ return {
   enabled = true,
   cmd = { 'NvimTreeToggle' },
   keys = {
-    { '<leader>fe', '<cmd>NvimTreeToggle<cr>', desc = 'Explorer' },
+    { '<leader>fe', '<cmd>NvimTreeToggle<cr>', desc = '[F]ile [E]xplore' },
   },
   opts = {
     disable_netrw = false,

@@ -48,6 +48,7 @@ vim.api.nvim_create_autocmd('FileType', {
     'neoai-input',
     'neoai-output',
     'notify',
+    'Telescope',
   },
   callback = function(event)
     vim.bo[event.buf].buflisted = false

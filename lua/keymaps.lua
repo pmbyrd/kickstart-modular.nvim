@@ -55,7 +55,7 @@ end
 -- Map Space + Ctrl + S to save the file
 
 -- Define a keymap for saving the file
-vim.api.nvim_set_keymap('n', '<leader>fs', ':w<CR>', { desc = 'Save current buffer' })
+vim.api.nvim_set_keymap('n', '<leader>fs', ':w<CR>', { desc = '[S]ave [F]ile' })
 local keymap = vim.keymap.set
 -- Better escape using jk in insert and terminal mode
 keymap('i', 'jk', '<ESC>')

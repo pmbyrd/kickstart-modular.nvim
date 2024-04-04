@@ -58,4 +58,7 @@ return {
     'DevdocsUpdate',
     'DevdocsUpdateAll',
   },
+  keys = {
+    { '<leader>so', '<cmd>DevdocsOpen<cr>', desc = '[S]earch Open [D]evdocs' },
+  },
 }
